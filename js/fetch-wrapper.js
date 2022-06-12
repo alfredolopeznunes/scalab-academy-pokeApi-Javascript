@@ -9,8 +9,8 @@ export default class FetchWrapper {
         return fetch(this.baseURL + endpoint)
             .then(response => response.json())
             .catch(error => {
-                console.error(error);
-                errorApi();
+                
+                errorApi(error);
             });
     }
 
@@ -23,8 +23,8 @@ export default class FetchWrapper {
             body: JSON.stringify(body)
         }).then(response => response.json())
         .catch(error => {
-            console.error(error);
-            errorApi();
+            
+            errorApi(error);
         });
     }
 }
