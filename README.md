@@ -1,8 +1,7 @@
 # Ejercicio PokeDex
 ##### _Proyecto Pokedex - Scalab Academy - Master JavaScript https://escalab.academy/_
 
-#
-#
+
 ## Requerimientos funcionales
 
 - Como usuario, quiero ingresar a un sistema que me permita obtener información del pokémon que desee, considerando que los pokemones son 898 y van de Bulbasaur a Calyrex.
