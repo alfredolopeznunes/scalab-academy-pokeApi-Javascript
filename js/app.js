@@ -1,13 +1,13 @@
 import FetchWrapper from "./fetch-wrapper.js";
-import { eventListeners, agregarBusqueda } from "./local-storage.js";
-import { pintarPokemon } from "./events.js";
+import { agregarBusqueda } from "./local-storage.js";
+import { pintarPokemon, eventListeners } from "./events.js";
 import { errorApi } from "./error.js";
 
 //url API
 const baseApi = "https://pokeapi.co/api/v2/";
 
 //Instancia de la API
-export const API = new FetchWrapper(baseApi);
+const API = new FetchWrapper(baseApi);
 
 //metodo get de la instancia
 const getPokemon = (pokemon) => {
@@ -20,8 +20,8 @@ const getPokemon = (pokemon) => {
             obtenerPokemon(data);
         })
         .catch((error) => {
-            console.error(error);
-            errorApi();
+            //console.error(error);
+            errorApi(error);
         });
 };
 
@@ -42,8 +42,9 @@ const obtenerPokemon = (dataPokemon) => {
 };
 
 
-export const form = document.querySelector("#formulario");
-export const pokemonIngresado = document.querySelector("#buscarPokemon");
+const form = document.querySelector("#formulario");
+const pokemonIngresado = document.querySelector("#buscarPokemon");
+
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -54,3 +55,10 @@ form.addEventListener("submit", (event) => {
 
 //Ejecuta los eventos del LocalStorage
 eventListeners();
+
+export {
+    form,
+    pokemonIngresado,
+    API,
+    getPokemon
+}

@@ -3,18 +3,6 @@ import { pokemonIngresado, form } from "./app.js";
 //LOCAL STORAGE
 const listaRecientes = document.querySelector('#historialBusqueda');
 
-    function eventListeners() {
-
-        // Borrar busqueda reciente
-        listaRecientes.addEventListener('click', borrarReciente);
-
-        //Seleccionar item del historial y pasarlo a input texto
-        listaRecientes.addEventListener('click', busquedaReciente);
-
-        // Contenido cargado en Local Storage
-        document.addEventListener('DOMContentLoaded', localStorageListo);
-    }
-
 // Añadir busqueda del formulario
   function agregarBusqueda(e) {
 
@@ -122,4 +110,10 @@ function busquedaReciente(e) {
 }
 
 
-export { eventListeners, agregarBusqueda }
+export {
+        listaRecientes,  
+        agregarBusqueda,
+        borrarReciente, 
+        busquedaReciente, 
+        localStorageListo 
+        }

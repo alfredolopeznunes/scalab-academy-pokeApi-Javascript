@@ -1,4 +1,18 @@
 import { API } from "./app.js";
+import { listaRecientes, borrarReciente, busquedaReciente, localStorageListo } from "./local-storage.js"
+
+
+function eventListeners() {
+
+    // Borrar busqueda reciente
+    listaRecientes.addEventListener('click', borrarReciente);
+
+    //Seleccionar item del historial y pasarlo a input texto
+    listaRecientes.addEventListener('click', busquedaReciente);
+
+    // Contenido cargado en Local Storage
+    document.addEventListener('DOMContentLoaded', localStorageListo);
+}
 
 const pintarPokemon = (propiedades) => {
     const cardPokemon = document.querySelector(".pantalla-pokedex");
@@ -24,4 +38,5 @@ const pintarPokemon = (propiedades) => {
     });
 };
 
-export { pintarPokemon }
+
+export { pintarPokemon, eventListeners }
