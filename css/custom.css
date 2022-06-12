@@ -1,0 +1,238 @@
+body .container {
+    background: #bf1317;
+    border-radius: 30px;
+    margin: 10px auto;
+    box-shadow: 1px 11px 1px 3px #a80004;
+}
+
+body {
+    background: #c7e3ff !important;
+}
+
+.pantalla-pokedex.active .card {
+    margin: 1rem;
+    padding: 2rem;
+    background-color: #424242;
+    border-radius: 30px;
+}
+
+.pantalla-pokedex.active .card-borde {
+    padding: 0px;
+    background: #e2e2e2;
+    border-radius: 5px;
+    animation: fadeInAnimation ease 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    box-shadow: 0px 0px 12px 0px #befff2;
+}
+@keyframes fadeInAnimation {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+
+.pantalla-pokedex.active .card-body {
+    background-color: #befff2;
+    margin: 8px;
+    max-height: 30vh;
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+    flex-direction: column;
+}
+
+section.pantalla-pokedex.inactive .card-body:before {
+    content: "";
+    background-color: #000000eb;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+section.pantalla-pokedex.inactive .card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.pantalla-pokedex.inactive img.card-body-img {
+    width: 100%;
+    height: auto;
+    max-width: 70vh;
+}
+
+section.pantalla-pokedex.inactive .historial {
+    display: none;
+}
+
+.controls-pokedex label {
+    font-weight: bold;
+}
+
+.pantalla-pokedex.active .fisico {
+    display: flex;
+}
+
+.pantalla-pokedex.active .fisico div {
+    margin: 0 10px;
+}
+/*Pantalla activa*/
+
+section.pantalla-pokedex.active .historial {
+    display: block;
+}
+
+.pantalla-pokedex.active .card-footer {
+    display: flex;
+}
+
+.pantalla-pokedex.active .card-footer .card-footer-column:first-child {
+    flex-basis: 50%;
+}
+.pantalla-pokedex.active .card-footer .card-footer-column {
+    flex-basis: 25%;
+    padding-right: 10px;
+}
+
+section.pantalla-pokedex.active .historial {
+    position: absolute;
+    right: 5%;
+    top: 50px;
+    background: #ffffff8c;
+    border: 1px groove;
+    padding: 1rem;
+    max-height: 500px;
+    max-width: 300px;
+}
+
+div#historialBusqueda {
+    margin-top: 15px;
+    overflow: auto;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 10px;
+}
+
+input#buscarPokemon {
+    padding: 10px;
+}
+
+section.pantalla-pokedex {
+    padding: 20px 10px 0 10px;
+}
+
+div#historialBusqueda li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+a.borrar-reciente {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.historial h3 {
+    font-size: 18px;
+}
+
+#historialBusqueda span.item:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+div#historialBusqueda .borrar-reciente:hover {
+    color: red;
+}
+
+.historial span {
+    font-size: 12px;
+}
+
+section.controls-pokedex {
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.pantalla-pokedex.active .card-body:before {
+    display: none;
+}
+
+section.pantalla-pokedex.active .card-body {
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+    flex-wrap: wrap;
+}
+
+section.pantalla-pokedex.active img.card-body-img {
+    width: 100%;
+    height: auto;
+    max-width: 35vh;
+}
+
+input.button-buscar {
+    background: #35d9dc;
+    border: 1px groove;
+    padding: 1rem 0.5rem;
+    border-radius: 20px;
+    margin-left: 2rem;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    box-shadow: 1px 4px 0px 1px rgb(0 0 0 / 24%);
+}
+
+input.actualizar {
+    background: #62ca99;
+    border: 1px groove;
+    padding: 1rem 0.5rem;
+    border-radius: 20px;
+    margin-right: 2rem;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    box-shadow: 1px 4px 0px 1px rgb(0 0 0 / 24%);
+}
+
+input.button-buscar:active, input.actualizar:active {
+    box-shadow: 1px 0px 0px 1px rgb(0 0 0 / 24%);
+    transform: translateY(4px);
+}
+
+.error {
+    display: none;
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px !important;
+    position: absolute !important;
+    bottom: 6px;
+    right: 39%;
+    border: 1px solid #842029 !important;
+}
+
+.error.alert.alert-danger.fade.show {
+    display: block;
+}
+
+footer {
+    float: right;
+    margin-right: 20px;
+    font-weight: 600;
+}
+
+@media (min-width: 1400px) {
+    body .container {
+        max-width: 1140px;
+    }
+}
